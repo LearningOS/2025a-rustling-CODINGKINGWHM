@@ -13,5 +13,5 @@ fn main() {
 }
 
 fn current_favorite_color() -> String {
-    "blue"
+    String::from("blue"); // 将字符串字面量转换为 String 类型
 }
