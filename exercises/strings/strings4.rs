@@ -12,19 +12,20 @@
 fn string_slice(arg: &str) {
     println!("{}", arg);
 }
+
 fn string(arg: String) {
     println!("{}", arg);
 }
 
 fn main() {
-String ("blue");
-    String_slice("red".to_string());
-    String (String::from("hi"));
-    String_slice("rust is fun!".to_owned());
-    String_slice("nice weather".into());
-    String(format!("Interpolation {}", "Station"));
-    String_slice(&String::from("abc")[0..1]);
-    String_slice("  hello there ".trim());
-    String("Happy Monday!".to_string().replace("Mon", "Tues"));
-    String_slice("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string(String::from("blue"));
+    string_slice("red".to_string().as_str());
+    string(String::from("hi"));
+    string_slice("rust is fun!".to_owned());
+    string_slice("nice weather".into());
+    string(format!("Interpolation {}", "Station"));
+    string_slice(&String::from("abc")[0..1]);
+    string_slice("  hello there ".trim());
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string_slice("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
