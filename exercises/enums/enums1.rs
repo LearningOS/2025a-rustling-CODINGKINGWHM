@@ -2,13 +2,14 @@
 //
 // No hints this time! ;)
 
-// I AM NOT DONE
+
 
 #[derive(Debug)]
 enum Message {
-    Quit=111,
-    Echo=111,
-    ChangeColor=blue,
+   Quit,
+   Echo,
+   Move,
+   ChangeColor,
 }
 
 fn main() {
