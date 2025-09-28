@@ -8,7 +8,7 @@
 
 
 #[derive(Debug)]
-#[derive(Debug)]
+
 struct Order {
     name: String,
     year: u32,
