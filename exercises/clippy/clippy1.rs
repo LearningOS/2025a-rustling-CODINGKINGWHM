@@ -12,11 +12,11 @@
 // I AM NOT DONE
 
 fn main() {
-    let radius = 5.0f32;
+    let radius: f32 = 5.0;
 
     let area = std::f32::consts::PI * radius * radius;
 
-    println!(
+    println!( 
         "The area of a circle with radius {:.2} is {:.5}!",
         radius, area
     );
