@@ -7,7 +7,10 @@
 
 #[derive(Debug)]
 enum Message {
-    // TODO: define the different variants used below
+    Move { x: i32, y: i32 }, // 使用字段名
+    Echo(String),
+    ChangeColor(i32, i32, i32), // 增加第三个字段
+    Quit,
 }
 
 impl Message {
@@ -18,9 +21,9 @@ impl Message {
 
 fn main() {
     let messages = [
-        Message::Move { x: 10, y: 30 },
+        Message::Move { x: 10, y: 30 }, // 使用字段名
         Message::Echo(String::from("hello world")),
-        Message::ChangeColor(200, 255, 255),
+        Message::ChangeColor(200, 255, 255), // 三个字段
         Message::Quit,
     ];
 
