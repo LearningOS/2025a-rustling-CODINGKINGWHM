@@ -4,9 +4,8 @@
 // hint.
 
 fn main() {
-    // 合并变量初始化与 Option 取值逻辑，更简洁
-    let res = 42 + option.unwrap_or(0);
     let option = Some(12);
+    let res = 42 + option.unwrap_or(0);
     
     println!("{}", res);
 }
