@@ -1,7 +1,6 @@
-// clippy2.rs
 fn main() {
     let option = Some(12);
-    let res = 42 + option; // 直接相加，Clippy 无警告
+    let res = 42 + option; // 移除冗余的 unwrap_or(0)
     
-    println!("{}", res); // 输出 54
+    println!("{}", res);
 }
