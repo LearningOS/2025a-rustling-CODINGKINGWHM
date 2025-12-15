@@ -4,13 +4,9 @@
 // hint.
 
 fn main() {
-    let mut res = 42;
+    // 合并变量初始化与 Option 取值逻辑，更简洁
+    let res = 42 + option.unwrap_or(0);
     let option = Some(12);
-    
-    // 优化点：用 if let 替代 for 循环处理 Option，更语义化
-    if let Some(x) = option {
-        res += x;
-    }
     
     println!("{}", res);
 }
