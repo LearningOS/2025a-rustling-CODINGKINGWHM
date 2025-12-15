@@ -5,9 +5,15 @@ extern "Rust" {
 
 mod Foo {
     #[no_mangle]
-    #[link_name = "my_demo_function_alias"]
-    fn my_demo_function(a: u32) -> u32 {
+    pub fn my_demo_function(a: u32) -> u32 {
         a
+    }
+
+    // 为原函数添加别名映射
+    #[link_name = "my_demo_function_alias"]
+    #[no_mangle]
+    pub extern "Rust" fn my_demo_function_alias(a: u32) -> u32 {
+        super::my_demo_function(a)
     }
 }
 
