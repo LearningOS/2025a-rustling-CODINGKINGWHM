@@ -7,18 +7,17 @@ pub enum Command {
 mod my_module {
     use super::Command;
 
-    // 补全函数签名：输入是 (String, Command) 的 Vec，输出是 String 的 Vec
-    pub fn transformer(input: &Vec<(String, Command)>) -> Vec<String> {
-        // 声明输出向量，类型为 Vec<String>
+    // 修复：参数改为传值（移除 &），匹配测试调用方式
+    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         let mut output: Vec<String> = vec![];
-        for (string, command) in input.iter() {
-            // 匹配命令并执行对应操作
+        // 直接遍历 input（无需 iter()），所有权已转移到函数内
+        for (string, command) in input {
             let result = match command {
                 Command::Uppercase => string.to_uppercase(),
                 Command::Trim => string.trim().to_string(),
                 Command::Append(n) => {
-                    let mut s = string.clone();
-                    s.push_str(&"bar".repeat(*n));
+                    let mut s = string; // 直接使用转移的所有权，无需 clone
+                    s.push_str(&"bar".repeat(n));
                     s
                 }
             };
@@ -30,7 +29,6 @@ mod my_module {
 
 #[cfg(test)]
 mod tests {
-    // 导入 my_module 中的 transformer 函数
     use super::my_module::transformer;
     use super::Command;
 

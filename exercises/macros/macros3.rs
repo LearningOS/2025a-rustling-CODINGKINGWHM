@@ -8,5 +8,5 @@ mod macros {
 }
 
 fn main() {
-    macros::my_macro!();
+    my_macro!(); // 直接调用（#[macro_export] 导出到 crate 根）
 }

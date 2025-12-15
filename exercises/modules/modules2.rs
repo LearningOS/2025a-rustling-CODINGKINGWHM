@@ -1,7 +1,7 @@
 mod delicious_snacks {
-    // 修复：为导入的常量指定别名，匹配main中调用的名称
-    use self::fruits::PEAR as fruit;
-    use self::veggies::CUCUMBER as veggie;
+    // 1. 重新导出子模块的常量，暴露为当前模块的公有别名
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
 
     mod fruits {
         pub const PEAR: &'static str = "Pear";
