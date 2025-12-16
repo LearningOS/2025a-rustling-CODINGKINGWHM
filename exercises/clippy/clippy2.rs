@@ -1,7 +1,9 @@
 fn main() {
+    let mut res = 42;
     let option = Some(12);
-    let res = 42 + option; // 移除冗余的 unwrap_or(0)
-    
-    println!("{}", res);
-}//
-//
+
+    // 替代 match，简洁且无冗余
+    if let Some(val) = option {
+        res += val;
+    }
+}
